@@ -1,0 +1,167 @@
+/* Early 2000s personal homepage style. No frameworks, no build step. */
+
+body {
+  margin: 0;
+  padding: 16px;
+  background: #d8dce8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='2' height='2' fill='%23c8cddc'/%3E%3C/svg%3E");
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  font-size: 13px;
+  color: #000;
+}
+
+#page {
+  max-width: 760px;
+  margin: 0 auto;
+  background: #fff;
+  border: 2px solid #33415c;
+}
+
+#header {
+  background: #33415c;
+  background: linear-gradient(#4a5d85, #26314a);
+  color: #fff;
+  padding: 14px 16px;
+  border-bottom: 3px double #ffcc33;
+}
+
+#header h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+#header p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: #ffcc33;
+}
+
+#layout {
+  display: flex;
+}
+
+#nav {
+  width: 150px;
+  flex-shrink: 0;
+  background: #eef0f6;
+  border-right: 1px solid #99a3bd;
+  padding: 12px 0;
+}
+
+#nav h3 {
+  margin: 0 10px 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #33415c;
+}
+
+#nav ul {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+#nav li a {
+  display: block;
+  padding: 3px 10px;
+  color: #0000cc;
+}
+
+#nav li a:hover,
+#nav li a.current {
+  background: #33415c;
+  color: #fff;
+  text-decoration: none;
+}
+
+#content {
+  flex: 1;
+  padding: 12px 18px 20px;
+  min-width: 0;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  color: #33415c;
+  border-bottom: 1px dotted #33415c;
+  padding-bottom: 2px;
+  margin: 16px 0 8px;
+}
+
+h4 {
+  margin: 10px 0 2px;
+}
+
+a { color: #0000cc; }
+a:visited { color: #551a8b; }
+a:hover { color: #cc0000; }
+
+.box {
+  border: 1px solid #99a3bd;
+  background: #f7f8fb;
+  padding: 8px 10px;
+  margin: 8px 0;
+}
+
+.small { font-size: 11px; color: #555; }
+
+table.cv {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.cv td {
+  vertical-align: top;
+  padding: 4px 6px;
+  border-bottom: 1px solid #e0e3ec;
+}
+
+table.cv td.when {
+  width: 110px;
+  color: #555;
+  white-space: nowrap;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-family: Tahoma, sans-serif;
+  border: 1px solid #33415c;
+  background: #ffcc33;
+  padding: 0 4px;
+  margin: 1px;
+}
+
+#footer {
+  border-top: 1px solid #99a3bd;
+  background: #eef0f6;
+  text-align: center;
+  font-size: 11px;
+  padding: 6px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dashed #99a3bd;
+}
+
+/* Phones: stack the sidebar on top */
+@media (max-width: 600px) {
+  body { padding: 0; }
+  #page { border: 0; }
+  #layout { display: block; }
+  #nav { width: auto; border-right: 0; border-bottom: 1px solid #99a3bd; padding: 6px 0; }
+  #nav h3 { display: none; }
+  #nav ul { margin: 0; text-align: center; }
+  #nav li { display: inline; }
+  #nav li a { display: inline-block; }
+  table.cv td.when { width: 80px; white-space: normal; }
+}
+
+@media print {
+  body { background: #fff; padding: 0; }
+  #nav, #footer { display: none; }
+  #page { border: 0; }
+}
